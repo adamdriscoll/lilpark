@@ -53,12 +53,42 @@ PIXI.Loader.shared
         sprites.trees = []
 
         var treeTextures = [
+            // trees
             new PIXI.Texture(resources.objects.texture, new PIXI.Rectangle(0, 80, 48, 64)),
-            new PIXI.Texture(resources.objects.texture, new PIXI.Rectangle(0, 144, 48, 64))
+            new PIXI.Texture(resources.objects.texture, new PIXI.Rectangle(0, 144, 48, 64)),
+            new PIXI.Texture(resources.objects.texture, new PIXI.Rectangle(48, 80, 48, 64)),
+            new PIXI.Texture(resources.objects.texture, new PIXI.Rectangle(48, 144, 48, 64)),
         ];
 
         for (var i = 0; i < 300; i++) {
-            sprites.trees.push(new PIXI.Sprite(treeTextures[i % 2]));
+            const spriteIndex = Math.floor(Math.random() * treeTextures.length);
+            sprites.trees.push(new PIXI.Sprite(treeTextures[spriteIndex]));
+        }
+
+        var logTextures = [
+
+            //logs
+            new PIXI.Texture(resources.objects.texture, new PIXI.Rectangle(96, 80, 32, 16)),
+            new PIXI.Texture(resources.objects.texture, new PIXI.Rectangle(96, 96, 32, 16)),
+            new PIXI.Texture(resources.objects.texture, new PIXI.Rectangle(96, 144, 48, 32)),
+
+            // bush
+            new PIXI.Texture(resources.objects.texture, new PIXI.Rectangle(96, 112, 32, 32)),
+            new PIXI.Texture(resources.objects.texture, new PIXI.Rectangle(128, 96, 32, 48)),
+
+            // saproling
+            new PIXI.Texture(resources.objects.texture, new PIXI.Rectangle(128, 80, 16, 16)),
+            new PIXI.Texture(resources.objects.texture, new PIXI.Rectangle(144, 80, 16, 16)),
+
+            // stump
+            new PIXI.Texture(resources.objects.texture, new PIXI.Rectangle(160, 88, 32, 32)),
+            new PIXI.Texture(resources.objects.texture, new PIXI.Rectangle(160, 120, 32, 32)),
+        ]
+
+
+        for (var i = 0; i < 20; i++) {
+            const spriteIndex = Math.floor(Math.random() * logTextures.length);
+            sprites.trees.push(new PIXI.Sprite(logTextures[spriteIndex]));
         }
 
         sprites.objects = new PIXI.Sprite(resources.objects.texture)
