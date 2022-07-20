@@ -106,6 +106,7 @@ const Home: NextPage = () => {
   }
 
   return (<Stage height={windowHeight} width={windowWidth} onMount={load} >
+
     <TilingSprite
       image={'./sprites/tilesets/grass.png'}
       width={windowWidth}
