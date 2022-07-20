@@ -33,9 +33,28 @@ function drawGrass() {
     app.stage.addChild(tilingSprite);
 }
 
+function drawText() {
+    const style = new PIXI.TextStyle({
+        fontFamily: 'Arial',
+        fontSize: 36,
+        wordWrap: true,
+        fill: 'white',
+        stroke: 'black',
+        strokeThickness: 5,
+        wordWrapWidth: 440,
+    });
+
+    const richText = new PIXI.Text("Little Park", style);
+    richText.x = 20;
+    richText.y = app.screen.height - 50;
+
+    app.stage.addChild(richText);
+}
+
 function drawWorld() {
     drawGrass();
     drawTrees();
+    drawText();
 }
 
 
