@@ -6,7 +6,10 @@ import { ResourceContext } from './context/resourceContext';
 
 const Sign = () => {
   return <ResourceContext.Consumer>{(context) => {
-    return (<Sprite texture={new PIXI.Texture(context?.objects?.texture, new PIXI.Rectangle(0, 0, 16, 16))} x={0} y={0} height={16} width={16} />)
+    if (context.objects.texture) {
+      return (<Sprite texture={new PIXI.Texture(context.objects.texture as any, new PIXI.Rectangle(0, 0, 16, 16))} x={0} y={0} height={16} width={16} />)
+    }
+
   }}</ResourceContext.Consumer>
 }
 
@@ -15,10 +18,10 @@ const Tree = ({ x = 0, y = 0 }) => {
 
     var treeTextures = [
       // trees
-      new PIXI.Texture(resources.objects.texture, new PIXI.Rectangle(0, 80, 48, 64)),
-      new PIXI.Texture(resources.objects.texture, new PIXI.Rectangle(0, 144, 48, 64)),
-      new PIXI.Texture(resources.objects.texture, new PIXI.Rectangle(48, 80, 48, 64)),
-      new PIXI.Texture(resources.objects.texture, new PIXI.Rectangle(48, 144, 48, 64)),
+      new PIXI.Texture(resources.objects.texture as any, new PIXI.Rectangle(0, 80, 48, 64)),
+      new PIXI.Texture(resources.objects.texture as any, new PIXI.Rectangle(0, 144, 48, 64)),
+      new PIXI.Texture(resources.objects.texture as any, new PIXI.Rectangle(48, 80, 48, 64)),
+      new PIXI.Texture(resources.objects.texture as any, new PIXI.Rectangle(48, 144, 48, 64)),
     ];
 
     const spriteIndex = Math.floor(Math.random() * treeTextures.length);
