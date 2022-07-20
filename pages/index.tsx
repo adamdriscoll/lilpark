@@ -2,7 +2,8 @@ import type { NextPage } from 'next'
 import { Stage, Sprite, TilingSprite, Text } from '@inlet/react-pixi'
 import React from 'react';
 import * as PIXI from 'pixi.js';
-import { ResourceContext } from './components/resourceContext';
+
+export const ResourceContext = React.createContext<PIXI.utils.Dict<PIXI.LoaderResource>>({});
 
 const Sign = () => {
   return <ResourceContext.Consumer>{(context) => {
