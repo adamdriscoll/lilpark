@@ -1,4 +1,3 @@
-import type { NextPage } from 'next'
 import { Stage, Sprite, TilingSprite, Text } from '@inlet/react-pixi'
 import React from 'react';
 import * as PIXI from 'pixi.js';
@@ -30,11 +29,9 @@ const Tree = ({ x = 0, y = 0 }) => {
   }}</ResourceContext.Consumer>
 }
 
-const Home: NextPage = () => {
+const Home = () => {
   const [resources, setResources] = React.useState<PIXI.utils.Dict<PIXI.LoaderResource>>({});
   const [loading, setLoading] = React.useState(true);
-  const [windowHeight, setWindowHeight] = React.useState(0);
-  const [windowWidth, setWindowWidth] = React.useState(0);
 
   const load = (app: PIXI.Application) => {
     app.loader.add('objects', '/sprites/objects/objects.png').load(({ resources }) => {
@@ -43,10 +40,8 @@ const Home: NextPage = () => {
     })
   }
 
-  React.useEffect(() => {
-    setWindowHeight(window.innerHeight);
-    setWindowWidth(window.innerWidth);
-  })
+  const windowHeight = window.innerHeight;
+  const windowWidth = window.innerWidth;
 
   // const sprites = {
   //   sign: {},
