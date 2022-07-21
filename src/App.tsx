@@ -34,7 +34,7 @@ const Home = () => {
   const [loading, setLoading] = React.useState(true);
 
   const load = (app: PIXI.Application) => {
-    app.loader.add('objects', '/sprites/objects/objects.png').load(({ resources }) => {
+    app.loader.add('objects', 'sprites/objects/objects.png').load(({ resources }) => {
       setResources(resources);
       setLoading(false);
     })
