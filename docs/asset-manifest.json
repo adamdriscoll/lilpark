@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/lilpark/static/css/main.6063c591.css",
-    "main.js": "/lilpark/static/js/main.1eb3b762.js",
-    "index.html": "/lilpark/index.html",
-    "main.6063c591.css.map": "/lilpark/static/css/main.6063c591.css.map",
-    "main.1eb3b762.js.map": "/lilpark/static/js/main.1eb3b762.js.map"
+    "main.css": "/static/css/main.6063c591.css",
+    "main.js": "/static/js/main.1eb3b762.js",
+    "index.html": "/index.html",
+    "main.6063c591.css.map": "/static/css/main.6063c591.css.map",
+    "main.1eb3b762.js.map": "/static/js/main.1eb3b762.js.map"
   },
   "entrypoints": [
     "static/css/main.6063c591.css",

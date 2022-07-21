@@ -2,7 +2,6 @@
   "name": "lilpark",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/lilpark",
   "dependencies": {
     "@inlet/react-pixi": "^6.8.0",
     "@types/node": "^16.11.45",
