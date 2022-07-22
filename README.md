@@ -32,4 +32,4 @@ Parks are generated dynamically. Adjust you park with `Park.jsx`. Once you've ma
 
 Below is a list of other parks. Feel free to submit a PR with your park. 
 
-- [lilpark.com](lilpark.com)
+- [lilpark.com](https://lilpark.com)
