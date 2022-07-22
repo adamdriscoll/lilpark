@@ -22,7 +22,7 @@
         },
         "tree2": {
             "frame": {
-                "x": 0,
+                "x": 48,
                 "y": 80,
                 "w": 48,
                 "h": 64
@@ -30,7 +30,7 @@
             "rotated": false,
             "trimmed": false,
             "spriteSourceSize": {
-                "x": 0,
+                "x": 48,
                 "y": 80,
                 "w": 48,
                 "h": 64

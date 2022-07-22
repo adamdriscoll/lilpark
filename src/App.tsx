@@ -2,6 +2,8 @@ import { Stage, Sprite, TilingSprite, Text } from '@inlet/react-pixi'
 import React from 'react';
 import * as PIXI from 'pixi.js';
 import TexturedObject from './components/TexturedObject';
+import Park from './components/Park';
+import { useTextures } from './components/Textures';
 
 export const ResourceContext = React.createContext<PIXI.utils.Dict<PIXI.LoaderResource>>({});
 
@@ -41,8 +43,6 @@ const Home = () => {
   //   })
   // }
 
-  const windowHeight = window.innerHeight;
-  const windowWidth = window.innerWidth;
 
   // const sprites = {
   //   sign: {},
@@ -77,25 +77,14 @@ const Home = () => {
   //   new PIXI.Texture(resources.objects.texture, new PIXI.Rectangle(160, 120, 32, 32)),
   // ]
 
+  const windowHeight = window.innerHeight;
+  const windowWidth = window.innerWidth;
+
 
   // for (var i = 0; i < 20; i++) {
   //   const spriteIndex = Math.floor(Math.random() * logTextures.length);
   //   sprites.trees.push(<Sprite texture={logTextures[spriteIndex]} />);
   // }
-
-  const body = new Array<JSX.Element>
-  for (var i = 0; i < 200; i++) {
-    const y = Math.floor(Math.random() * windowHeight);
-    const x = Math.floor(Math.random() * windowWidth);
-    body.push(<TexturedObject key={i} texture="tree1" x={x} y={y} />)
-  }
-
-  body.push(<Text key='text' text='Little Park' y={windowHeight - 50} x={50} style={{
-    fill: 'white',
-    stroke: 'black',
-    strokeThickness: 4,
-    fontSize: 32
-  }} />)
 
   return (<Stage height={windowHeight} width={windowWidth} >
     <TilingSprite
@@ -104,7 +93,7 @@ const Home = () => {
       height={windowHeight}
       tilePosition={{ x: 100, y: 150 }}
     />
-    {body}
+    <Park />
   </Stage>)
 }
 

@@ -1,13 +1,9 @@
 import React from 'react';
 import { Sprite } from '@inlet/react-pixi';
-import { Textures } from './Textures';
+import { useTextures } from './Textures';
 
 const TexturedObject = ({ texture, ...props }) => {
-    return <Textures spritesheet={"sprites/objects/objects.json"}>
-        {textures => {
-            return <Sprite {...props} texture={textures[texture]} />
-        }
-        }
-    </Textures>
+    const textures = useTextures("sprites/objects/objects.json");
+    return <>{textures && <Sprite {...props} texture={textures[texture]} />}</>
 }
 export default TexturedObject;
