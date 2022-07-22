@@ -10,7 +10,7 @@ To plant your park, you can fork this repo and setup GitHub pages to point to yo
 
 ## Configure Your Domain
 
-You'll need to setup your DNS settings to point to GitHub in order to plant your part. If you want to point your apex domain to GitHub, setup some A records using the GitHub IP addresses. 
+You'll need to setup your DNS settings to point to GitHub in order to plant your part. If you want to point your [apex domain to GitHub](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain), setup some A records using the GitHub IP addresses. 
 
 ![](/imgs/dns.png)
 
