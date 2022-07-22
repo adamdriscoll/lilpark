@@ -1,6 +1,6 @@
 # Little Park
 
-Don't know what to do with your domain? Why not park a park? Plant some pretty, little trees to mark the internet a little more green.
+Don't know what to do with your domain? Why not park a park? Plant some pretty, little trees to make the internet a little more green.
 
 ![](/imgs/park.png)
 
