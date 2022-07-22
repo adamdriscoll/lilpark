@@ -1,14 +1,14 @@
 import React from 'react';
 import { Sprite, Text } from '@inlet/react-pixi';
 import { useTextures } from './Textures';
+import Bird from './Bird';
 
 const Park = () => {
+    const windowHeight = window.innerHeight;
+    const windowWidth = window.innerWidth;
     const textures = useTextures("sprites/objects/objects.json");
 
     if (!textures) return <></>
-
-    const windowHeight = window.innerHeight;
-    const windowWidth = window.innerWidth;
 
     const body = new Array<JSX.Element>();
     for (var i = 0; i < 200; i++) {
@@ -24,8 +24,9 @@ const Park = () => {
         stroke: 'black',
         strokeThickness: 4,
         fontSize: 32
-
     }} />)
+
+    body.push(<Bird x={windowWidth} y={Math.floor(Math.random() * windowHeight)} />)
 
     return <>{body}</>
 }
