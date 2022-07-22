@@ -28,7 +28,7 @@ export function useTextures(spriteSheetPath, asTextureChain = false) {
                 getTextures(resource[spriteSheetPath].textures, asTextureChain)
             );
         });
-    }, [app.loader, spriteSheetPath]);
+    }, [app.loader, spriteSheetPath, asTextureChain]);
 
     return textures;
 }

@@ -1,36 +1,31 @@
-import { Stage, Sprite, TilingSprite, Text } from '@inlet/react-pixi'
+import { Stage, TilingSprite } from '@inlet/react-pixi'
 import React from 'react';
-import * as PIXI from 'pixi.js';
-import TexturedObject from './components/TexturedObject';
 import Park from './components/Park';
-import { useTextures } from './components/Textures';
 
-export const ResourceContext = React.createContext<PIXI.utils.Dict<PIXI.LoaderResource>>({});
+// const Sign = () => {
+//   return <ResourceContext.Consumer>{(context) => {
+//     if (context?.objects?.texture) {
+//       return (<Sprite texture={new PIXI.Texture(context.objects.texture as any, new PIXI.Rectangle(0, 0, 16, 16))} x={0} y={0} height={16} width={16} />)
+//     }
 
-const Sign = () => {
-  return <ResourceContext.Consumer>{(context) => {
-    if (context?.objects?.texture) {
-      return (<Sprite texture={new PIXI.Texture(context.objects.texture as any, new PIXI.Rectangle(0, 0, 16, 16))} x={0} y={0} height={16} width={16} />)
-    }
+//   }}</ResourceContext.Consumer>
+// }
 
-  }}</ResourceContext.Consumer>
-}
+// const Tree = ({ x = 0, y = 0 }) => {
+//   return <ResourceContext.Consumer>{(resources) => {
 
-const Tree = ({ x = 0, y = 0 }) => {
-  return <ResourceContext.Consumer>{(resources) => {
+//     var treeTextures = [
+//       // trees
+//       new PIXI.Texture(resources.objects.texture as any, new PIXI.Rectangle(0, 80, 48, 64)),
+//       new PIXI.Texture(resources.objects.texture as any, new PIXI.Rectangle(0, 144, 48, 64)),
+//       new PIXI.Texture(resources.objects.texture as any, new PIXI.Rectangle(48, 80, 48, 64)),
+//       new PIXI.Texture(resources.objects.texture as any, new PIXI.Rectangle(48, 144, 48, 64)),
+//     ];
 
-    var treeTextures = [
-      // trees
-      new PIXI.Texture(resources.objects.texture as any, new PIXI.Rectangle(0, 80, 48, 64)),
-      new PIXI.Texture(resources.objects.texture as any, new PIXI.Rectangle(0, 144, 48, 64)),
-      new PIXI.Texture(resources.objects.texture as any, new PIXI.Rectangle(48, 80, 48, 64)),
-      new PIXI.Texture(resources.objects.texture as any, new PIXI.Rectangle(48, 144, 48, 64)),
-    ];
-
-    const spriteIndex = Math.floor(Math.random() * treeTextures.length);
-    return (<Sprite texture={treeTextures[spriteIndex]} x={x} y={y} />)
-  }}</ResourceContext.Consumer>
-}
+//     const spriteIndex = Math.floor(Math.random() * treeTextures.length);
+//     return (<Sprite texture={treeTextures[spriteIndex]} x={x} y={y} />)
+//   }}</ResourceContext.Consumer>
+// }
 
 const Home = () => {
   // const [resources, setResources] = React.useState<PIXI.utils.Dict<PIXI.LoaderResource>>({});

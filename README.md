@@ -23,3 +23,7 @@ Finally, point to your domain name. This might take awhile to verify.
 ![](imgs/domain.png)
 
 After a little bit, you'll have a park planted at your domain. 🥳
+
+## Manicure Your Park
+
+Parks are generated dynamically. Adjust you park with `Park.jsx`. Once you've made some changes, run `npm run build` and commit the changes.
