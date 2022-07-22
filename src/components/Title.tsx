@@ -8,6 +8,6 @@ const Title = ({ windowHeight }) => {
         stroke: 'black',
         strokeThickness: 4,
         fontSize: 32
-    }} />
+    }} buttonMode={true} />
 }
 export default Title;
