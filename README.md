@@ -34,3 +34,7 @@ Below is a list of other parks. Feel free to submit a PR with your park.
 
 - [lilpark.com](https://lilpark.com)
 - [randommagiccard.com](https://randommagiccard.com)
+
+## Attribution 
+
+- [Mystic Woods Pixel Art](https://twitter.com/GameEndeavor)
