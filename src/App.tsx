@@ -81,15 +81,20 @@ const Home = () => {
   //   sprites.trees.push(<Sprite texture={logTextures[spriteIndex]} />);
   // }
 
-  return (<Stage height={windowHeight} width={windowWidth} >
-    <TilingSprite
-      image={'./sprites/tilesets/grass.png'}
-      width={windowWidth}
-      height={windowHeight}
-      tilePosition={{ x: 100, y: 150 }}
-    />
-    <Park />
-  </Stage>)
+  return (<>
+    <Stage height={windowHeight} width={windowWidth} >
+      <TilingSprite
+        image={'./sprites/tilesets/grass.png'}
+        width={windowWidth}
+        height={windowHeight}
+        tilePosition={{ x: 100, y: 150 }}
+      />
+      <Park />
+    </Stage>
+    <audio autoPlay controls loop>
+      <source src={'sounds/birds.wav'} type="audio/wav" />
+      Your browser does not support the audio element.
+    </audio></>)
 }
 
 export default Home
