@@ -1,6 +1,7 @@
 import { Stage, Sprite, TilingSprite, Text } from '@inlet/react-pixi'
 import React from 'react';
 import * as PIXI from 'pixi.js';
+import TexturedObject from './components/TexturedObject';
 
 export const ResourceContext = React.createContext<PIXI.utils.Dict<PIXI.LoaderResource>>({});
 
@@ -30,15 +31,15 @@ const Tree = ({ x = 0, y = 0 }) => {
 }
 
 const Home = () => {
-  const [resources, setResources] = React.useState<PIXI.utils.Dict<PIXI.LoaderResource>>({});
-  const [loading, setLoading] = React.useState(true);
+  // const [resources, setResources] = React.useState<PIXI.utils.Dict<PIXI.LoaderResource>>({});
+  // const [loading, setLoading] = React.useState(true);
 
-  const load = (app: PIXI.Application) => {
-    app.loader.add('objects', 'sprites/objects/objects.png').load(({ resources }) => {
-      setResources(resources);
-      setLoading(false);
-    })
-  }
+  // const load = (app: PIXI.Application) => {
+  //   app.loader.add('objects', 'sprites/objects/objects.png').load(({ resources }) => {
+  //     setResources(resources);
+  //     setLoading(false);
+  //   })
+  // }
 
   const windowHeight = window.innerHeight;
   const windowWidth = window.innerWidth;
@@ -82,35 +83,28 @@ const Home = () => {
   //   sprites.trees.push(<Sprite texture={logTextures[spriteIndex]} />);
   // }
 
-  const body = []
-  if (!loading) {
-    body.push(<Sign />)
-
-    for (var i = 0; i < 200; i++) {
-      const y = Math.floor(Math.random() * windowHeight);
-      const x = Math.floor(Math.random() * windowWidth);
-      body.push(<Tree x={x} y={y} />)
-    }
-
-    body.push(<Text text='Little Park' y={windowHeight - 50} x={50} style={{
-      fill: 'white',
-      stroke: 'black',
-      strokeThickness: 4,
-      fontSize: 32
-    }} />)
+  const body = new Array<JSX.Element>
+  for (var i = 0; i < 200; i++) {
+    const y = Math.floor(Math.random() * windowHeight);
+    const x = Math.floor(Math.random() * windowWidth);
+    body.push(<TexturedObject key={i} texture="tree1" x={x} y={y} />)
   }
 
-  return (<Stage height={windowHeight} width={windowWidth} onMount={load} >
+  body.push(<Text key='text' text='Little Park' y={windowHeight - 50} x={50} style={{
+    fill: 'white',
+    stroke: 'black',
+    strokeThickness: 4,
+    fontSize: 32
+  }} />)
 
+  return (<Stage height={windowHeight} width={windowWidth} >
     <TilingSprite
       image={'./sprites/tilesets/grass.png'}
       width={windowWidth}
       height={windowHeight}
       tilePosition={{ x: 100, y: 150 }}
     />
-    <ResourceContext.Provider value={resources}>
-      {body}
-    </ResourceContext.Provider>
+    {body}
   </Stage>)
 }
 

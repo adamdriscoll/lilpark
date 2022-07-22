@@ -1,0 +1,55 @@
+{
+    "frames": {
+        "tree1": {
+            "frame": {
+                "x": 0,
+                "y": 80,
+                "w": 48,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 80,
+                "w": 48,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 256,
+                "h": 256
+            }
+        },
+        "tree2": {
+            "frame": {
+                "x": 0,
+                "y": 80,
+                "w": 48,
+                "h": 64
+            },
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 80,
+                "w": 48,
+                "h": 64
+            },
+            "sourceSize": {
+                "w": 256,
+                "h": 256
+            }
+        }
+    },
+    "meta": {
+        "app": "http://lilpark.com",
+        "version": "1.0",
+        "image": "objects.png",
+        "format": "RGBA8888",
+        "size": {
+            "w": 256,
+            "h": 256
+        },
+        "scale": "1"
+    }
+}
