@@ -5,10 +5,12 @@ import { useTextures } from './Textures';
 
 const Bird = (props) => {
     const [x, setX] = useState(props.x);
-
-    // custom ticker
     useTick(delta => {
-        setX(x - delta);
+        const xLocation = x - delta;
+        if (xLocation < -16) {
+            props.onFlewAway(props.id);
+        }
+        setX(xLocation);
     });
 
     const textures = useTextures("sprites/characters/BirdSprite.json", true);
